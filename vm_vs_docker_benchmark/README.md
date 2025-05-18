@@ -114,3 +114,18 @@ Creado por Marina Arce
 
 
 http://192.168.0.28:5000
+
+
+
+from flask import Flask, render_template, request, send_file
+from PIL import Image
+import io
+import os
+
+app = Flask(__name__)
+
+@app.route("/", methods=["GET", "POST"])
+def index():
+    ...
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8080)
