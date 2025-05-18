@@ -1,6 +1,6 @@
 FROM python:3.10-slim
 
-RUN apt update && apt install -y procps \
+RUN apt update && apt install -y sysbench git curl procps \
     && pip install --upgrade pip
 
 WORKDIR /app
@@ -10,6 +10,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY ../ .
 
+EXPOSE 8888
 EXPOSE 5000
 
-CMD ["python", "app.py"]
+CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--allow-root", "--NotebookApp.token=''"]

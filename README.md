@@ -126,7 +126,7 @@ El servidor Flask se expone en `localhost`:5000 para acceder desde el navegador
     │   ├── docker_setup.sh
     │   ├── vm_setup.sh
     │   └── Dockerfile
-    │   
+    └── README.md   
 ```
 
 ---
@@ -184,5 +184,5 @@ Este proyecto se ha apoyado en documentación oficial y recursos técnicos para 
 
 ## 🧑‍💻 Autor
 **Marina Arce Palacín**
-1º año Ingeniería Informática
-Tecnologías de la Información y Comunicación (TIC)
+- 1º año Ingeniería Informática
+- Tecnologías de la Información y Comunicación (TIC)
