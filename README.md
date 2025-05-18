@@ -82,23 +82,21 @@ docker run -d -p 3000:3000 --name my-node-app node:18-alpine
 | **Tiempo de inicio**     | Segundos                                 | Minutos                                 |
 | **Consumo de recursos**  | Mínimo (comparte kernel)                | Alto (SO completo virtualizado)         |
 | **Aislamiento**          | Procesos (namespaces/cgroups)           | Hardware completo                       |
-| **Portabilidad**         | Alta (misma imagen en cualquier host)   | Media (depende del hipervisor)          |
-| **Seguridad**           | Depende del kernel host                 | Mayor (aislamiento completo)            |
-| **Escalabilidad**       | Alta (ideal para microservicios)        | Limitada (mayor overhead)              |
-| **Sistemas operativos** | Solo el mismo tipo que el host          | Cualquier SO independiente             |
-| **Casos de uso típicos**| Microservicios, CI/CD, aplicaciones cloud | Legacy apps, entornos seguros, multi-SO |
+| **Portabilidad**         | Alta                                     | Media (depende del hipervisor)          |
+| **Seguridad**            | Depende del kernel host                 | Mayor (aislamiento completo)            |
 | **Herramientas populares**| Docker, Podman, Kubernetes             | VMware, VirtualBox, Hyper-V            |
 
 ---
 
 ## Objetivo del Proyecto
-Desarrollar un servidor Flask para convertir imágenes JPG a PNG.
 
-Medir y comparar el rendimiento del servidor en un contenedor Docker vs una VM.
-
-Analizar métricas como tiempo de conversión, consumo de CPU y memoria.
-
-Proporcionar una solución multiplataforma fácil de usar y desplegar.
+1. Desarrollar un servidor Flask para convertir imágenes JPG → PNG.
+2. Ejecutar el servidor en un contenedor Docker y una máquina virtual (VM).
+3. Medir y comparar métricas de rendimiento:
+   - Tiempo de conversión
+   - Uso de CPU y memoria
+   - Tiempo de arranque del entorno
+4. Proporcionar una solución multiplataforma, ligera y fácil de desplegar.
 
 ---
 
@@ -109,7 +107,7 @@ Proporcionar una solución multiplataforma fácil de usar y desplegar.
 - **Docker**: Imagen base `python:3.10-slim`, 2 CPUs asignadas
 - **Red y conexión**: Ambas plataformas usan red NAT para conectarse al host.
 
-El servidor Flask se expone en localhost:5000 para acceder desde el navegador
+El servidor Flask se expone en `localhost`:5000 para acceder desde el navegador
 
 ---
 
@@ -118,17 +116,56 @@ El servidor Flask se expone en localhost:5000 para acceder desde el navegador
 ``` cpp
 .
 ├── README.md
-├── generar_proyecto.py
+├── generar_proyecto.py                    # Script principal
 └── vm_vs_docker_benchmark/
     ├── .gitignore
-    ├── results/
+    ├── results/                           # Resultados de las pruebas
     ├── notebooks/
-    │   └── vm_vs_docker_comparison.ipynb
+    │   └── vm_vs_docker_comparison.ipynb  # Análisis comparativo
     ├── scripts/
     │   ├── docker_setup.sh
     │   ├── vm_setup.sh
     │   └── Dockerfile
     │   
+```
+
+---
+
+## Requisitos
+
+- **Python 3.8+** – Lenguaje base del proyecto.
+- **Flask** – Microframework web para construir la interfaz de usuario y el servidor.
+- **Pillow (PIL)** – Librería de procesamiento de imágenes para manejar la conversión JPG → PNG.
+- **Docker** – Para ejecutar el proyecto en contenedores y comparar el rendimiento.
+- **VirtualBox** - Maquina virtual
+- **Git/GitHub** – Control de versiones y almacenamiento del código fuente.
+- **Navegador web** – Para usar la interfaz de carga de imágenes.
+- **Editor de código (Visual Studio Code, PyCharm, etc.)** – Para desarrollo y pruebas.
+
+---
+
+## Instrucciones de Ejecución
+
+### 1. Ejecutar localmente sin Docker
+```bash
+pip install -r requirements.txt
+python app.py
+```
+Luego abre en el navegador: `http://localhost:5000`
+
+### 2. Ejecutar con Docker 
+```bash
+docker build -t jpg-to-png-converter .
+docker run -p 5000:5000 jpg-to-png-converter
+```
+Luego abre en el navegador: `http://localhost:5000`
+
+### 3. Entorno virtual para mantener todo limpio
+```bash
+python -m venv venv
+source venv/bin/activate      # En Windows: venv\Scripts\activate
+pip install -r requirements.txt
+python app.py
 ```
 
 ---
@@ -145,43 +182,7 @@ Este proyecto se ha apoyado en documentación oficial y recursos técnicos para 
 
 ---
 
-## Requisitos
-
-- **Python 3.8+** – Lenguaje base del proyecto.
-- **Flask** – Microframework web para construir la interfaz de usuario y el servidor.
-- **Pillow (PIL)** – Librería de procesamiento de imágenes para manejar la conversión JPG → PNG.
-- **Docker** – Para ejecutar el proyecto en contenedores y comparar el rendimiento.
-- **VirtualBox / Máquina Virtual (Ubuntu 20.04 recomendado)** – Para pruebas comparativas fuera de Docker.
-- **Git/GitHub** – Control de versiones y almacenamiento del código fuente.
-- **Navegador web** – Para usar la interfaz de carga de imágenes (`localhost:5000`).
-- **Editor de código (Visual Studio Code, PyCharm, etc.)** – Para desarrollo y pruebas.
-
----
-
-## Formas fáciles de ejecutar el proyecto
-
-### 1. Ejecutar localmente sin Docker
-Si solo quieres probar rápido el servidor Flask, sigue estos pasos:
-
-```bash
-pip install -r requirements.txt
-python app.py
-```
-Luego abre en el navegador: `http://localhost:5000`
-
-### 2. Ejecutar con Docker 
-Construye y corre el contenedor con un solo comando:
-
-```bash
-docker build -t jpg-to-png-converter .
-docker run -p 5000:5000 jpg-to-png-converter
-```
-Luego abre en el navegador: `http://localhost:5000`
-
-### 3. Entorno virtual para mantener todo limpio
-```bash
-python -m venv venv
-source venv/bin/activate      # En Windows: venv\Scripts\activate
-pip install -r requirements.txt
-python app.py
-```
+## 🧑‍💻 Autor
+**Marina Arce Palacín**
+1º año Ingeniería Informática
+Tecnologías de la Información y Comunicación (TIC)
