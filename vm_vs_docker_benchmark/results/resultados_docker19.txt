@@ -1,0 +1,11 @@
+Repeticiones: 10
+Intento 1: 2 ms
+Intento 2: 2 ms
+Intento 3: 2 ms
+Intento 4: 1 ms
+Intento 5: 1 ms
+Intento 6: 2 ms
+Intento 7: 2 ms
+Intento 8: 6 ms
+Intento 9: 7 ms
+Intento 10: 3 ms
