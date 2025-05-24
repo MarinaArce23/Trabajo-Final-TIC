@@ -1,0 +1,6 @@
+Métrica,VM,Docker
+Tiempo medio de conversión (ms),9.7,2.8
+Uso medio de CPU (%),1.97,0.87
+Uso medio de RAM (MB),29.01,28.947
+Tiempo de arranque (s),4.2,1.9
+Tamaño del entorno (MB),152.0,49.0

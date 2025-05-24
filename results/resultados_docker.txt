@@ -1,0 +1,15 @@
+Intento 1: 66.04 ms, CPU: 0.00%, RAM: 28.83 MB
+Intento 2: 22.82 ms, CPU: 0.00%, RAM: 28.96 MB
+Intento 3: 22.04 ms, CPU: 0.00%, RAM: 28.96 MB
+Intento 4: 16.88 ms, CPU: 0.00%, RAM: 28.96 MB
+Intento 5: 12.94 ms, CPU: 0.00%, RAM: 28.96 MB
+Intento 6: 8.51 ms, CPU: 0.00%, RAM: 28.96 MB
+Intento 7: 11.69 ms, CPU: 0.00%, RAM: 28.96 MB
+Intento 8: 9.48 ms, CPU: 0.00%, RAM: 28.96 MB
+Intento 9: 11.72 ms, CPU: 0.00%, RAM: 28.96 MB
+Intento 10: 17.60 ms, CPU: 8.70%, RAM: 28.96 MB
+
+📊 Resultados promedio:
+Tiempo: 19.97 ms
+CPU: 0.87 %
+RAM: 28.94 MB
