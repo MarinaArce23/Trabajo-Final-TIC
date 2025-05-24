@@ -1,16 +1,16 @@
-from flask import Flask, render_template, request, send_file, flash, redirect, url_for
+from flask import Flask, render_template, request, flash, redirect, url_for
 from PIL import Image
 import io
 import os
+import base64
 
 template_folder = os.path.join(os.path.dirname(__file__), "templates")
-static_folder = os.path.join(os.path.dirname(__file__), "static")
-
-app = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
-app.secret_key = "supersecretkey"  # Necesario para mostrar mensajes flash
+app = Flask(__name__, template_folder=template_folder)
+app.secret_key = "supersecretkey"
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+    image_data = None
     if request.method == "POST":
         file = request.files.get("image")
         if not file:
@@ -26,12 +26,14 @@ def index():
             img_io = io.BytesIO()
             img.save(img_io, "PNG")
             img_io.seek(0)
-            return send_file(img_io, mimetype="image/png", as_attachment=True, download_name="converted.png")
+            # Convertimos a base64 para incrustar en HTML
+            image_data = base64.b64encode(img_io.read()).decode('utf-8')
         except Exception:
             flash("❌ Error al procesar la imagen.")
             return redirect(url_for("index"))
 
-    return render_template("index.html")
-    
+    return render_template("index.html", image_data=image_data)
+
 if __name__ == "__main__":
+    print("🟢 Servidor Flask iniciándose...")
     app.run(host="0.0.0.0", port=5000, debug=True)

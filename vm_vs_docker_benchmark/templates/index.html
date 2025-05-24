@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Conversión JPG → PNG</title>
+    <title>Convertidor JPG → PNG</title>
 </head>
 <body>
     <h1>Convertidor de imágenes JPG a PNG</h1>
@@ -21,6 +21,11 @@
         <input type="file" name="image" accept=".jpg,.jpeg" required />
         <button type="submit">Convertir</button>
     </form>
+
+    {% if image_data %}
+        <h2>Resultado:</h2>
+        <img src="data:image/png;base64,{{ image_data }}" alt="Imagen convertida" />
+        <p><a href="data:image/png;base64,{{ image_data }}" download="converted.png">📥 Descargar imagen</a></p>
+    {% endif %}
 </body>
 </html>
-
