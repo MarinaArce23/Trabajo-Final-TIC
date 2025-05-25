@@ -147,11 +147,13 @@ El servidor Flask se expone en `localhost`:5000 para acceder desde el navegador
 - **Python 3.8+** – Lenguaje base del proyecto.
 - **Flask** – Microframework web para construir la interfaz de usuario y el servidor.
 - **Pillow (PIL)** – Librería de procesamiento de imágenes para manejar la conversión JPG → PNG.
-- **Docker** – Para ejecutar el proyecto en contenedores y comparar el rendimiento.
+- **psutil** – Monitorización de recursos (CPU y RAM).
+- **time** - Medición precisa de duración de tareas.
+- **panda y matplotlib** - Registro de datos y generación de gráficas.
 - **VirtualBox** - Maquina virtual
 - **Git/GitHub** – Control de versiones y almacenamiento del código fuente.
 - **Navegador web** – Para usar la interfaz de carga de imágenes.
-- **Editor de código (Visual Studio Code, PyCharm, etc.)** – Para desarrollo y pruebas.
+- **Jupyter Notebook** - Automatización y análisis reproducible.
 
 ---
 
@@ -178,22 +180,6 @@ source venv/bin/activate      # En Windows: venv\Scripts\activate
 pip install -r requirements.txt
 python app.py
 ```
-
----
-
-## 📸 Capturas del Convertidor Web
-
-Vista desde el navegador accediendo al servidor Flask:
-
-![Convertidor Web](notebooks/WEB_CONVERTIDOR.png)
-
-Formulario para subir imágenes:
-
-![Formulario de carga](notebooks/Trabajo_final22222.png)
-
-Botón de descarga tras conversión:
-
-![Descarga](notebooks/Trabajo_final.png)
 
 ---
 
