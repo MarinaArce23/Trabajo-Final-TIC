@@ -170,6 +170,22 @@ python app.py
 
 ---
 
+## 📸 Capturas del Convertidor Web
+
+Vista desde el navegador accediendo al servidor Flask:
+
+![Convertidor Web](notebooks/WEB_CONVERTIDOR.png)
+
+Formulario para subir imágenes:
+
+![Formulario de carga](notebooks/Trabajo_final22222.png)
+
+Botón de descarga tras conversión:
+
+![Descarga](notebooks/Trabajo_final.png)
+
+---
+
 ## Bibliografía y Recursos
 
 Este proyecto se ha apoyado en documentación oficial y recursos técnicos para comparar el rendimiento entre contenedores Docker y máquinas virtuales.
@@ -182,7 +198,50 @@ Este proyecto se ha apoyado en documentación oficial y recursos técnicos para 
 
 ---
 
+## 🧠 Conclusión Final: ¿Docker o Máquina Virtual?
+
+Tras analizar el rendimiento del servidor Flask tanto en una máquina virtual como en un contenedor Docker, se concluye que **Docker es la opción más recomendable** para este tipo de aplicaciones web ligeras y específicas.
+
+### ¿Por qué Docker es más adecuado?
+
+- **Tiempo de arranque**: Docker inicia en segundos, mientras que una VM puede tardar varios minutos.
+- **Uso de recursos**: Docker consume mucha menos CPU y RAM, ideal para tareas simples como la conversión de imágenes.
+- **Portabilidad y despliegue**: Las aplicaciones Dockerizadas pueden ejecutarse fácilmente en cualquier entorno (Windows, Linux, nube, etc.).
+- **Escalabilidad**: Docker se integra fácilmente con orquestadores como Kubernetes, útil si el proyecto creciera.
+
+### Ventajas de Docker en este proyecto
+
+- Bajo consumo de recursos
+- Arranque instantáneo
+- Fácil distribución del contenedor
+- Perfecto para microservicios y CI/CD
+
+### Inconvenientes de Docker
+
+- Requiere conocimientos iniciales sobre imágenes y contenedores
+- Aislamiento menor que una VM (comparte kernel con el host)
+- No sirve para aplicaciones que necesiten un SO completo distinto al del host
+
+---
+
+### ¿Cuándo preferir una Máquina Virtual?
+
+Las máquinas virtuales siguen siendo útiles si:
+
+- La aplicación necesita **un sistema operativo distinto** o con configuraciones especiales.
+- Se requiere **máximo aislamiento** por seguridad (entornos bancarios, médicos, etc.).
+- Hay que simular entornos reales completos (por ejemplo, testear en Windows Server desde Linux).
+
+---
+
+### Veredicto
+
+> **Para proyectos simples, portables y que necesiten eficiencia de recursos, Docker es la mejor opción.**  
+> Las máquinas virtuales, en cambio, siguen siendo útiles en contextos más pesados, inseguros o con múltiples sistemas operativos.
+
+---
+
 ## 🧑‍💻 Autor
-**Marina Arce Palacín**
-- 1º año Ingeniería Informática
+**Marina Arce Palacín**  
+- 1º año Ingeniería Informática  
 - Tecnologías de la Información y Comunicación (TIC)
