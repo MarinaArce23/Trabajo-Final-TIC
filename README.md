@@ -116,16 +116,27 @@ El servidor Flask se expone en `localhost`:5000 para acceder desde el navegador
 ``` cpp
 .
 ├── README.md
-├── generar_proyecto.py                    # Script principal
+├── generar_proyecto.py                    
 └── vm_vs_docker_benchmark/
     ├── .gitignore
-    ├── results/                           # Resultados de las pruebas
+    ├── results/
+    |   ├──benchmark_completo.csv
+        ├──grafica_final_comparativa.png
+        ├──resultados_docker.json
+        └──resultados_vm.json                       
     ├── notebooks/
-    │   └── vm_vs_docker_comparison.ipynb  # Análisis comparativo
+    │   └── vm_vs_docker_comparison.ipynb  
     ├── scripts/
     │   ├── docker_setup.sh
     │   ├── vm_setup.sh
-    │   └── Dockerfile
+    │   ├── Dockerfile.benchmark
+    |   └── benchmark_setup.sh
+    ├── templates/
+    ├── venv/
+    ├── Dockerfile
+    ├── app.py
+    ├── requirements.txt
+    ├── test_valido.jpg
     └── README.md   
 ```
 
