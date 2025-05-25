@@ -9,7 +9,7 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 # Unset irrelevant variables.
 deactivate nondestructive
 
-setenv VIRTUAL_ENV /home/marina/Trabajo-Final-TIC/vm_vs_docker_benchmark/venv
+setenv VIRTUAL_ENV /home/marina/Trabajo-Final-TIC-BACKUP/vm_vs_docker_benchmark/venv
 
 set _OLD_VIRTUAL_PATH="$PATH"
 setenv PATH "$VIRTUAL_ENV/"bin":$PATH"

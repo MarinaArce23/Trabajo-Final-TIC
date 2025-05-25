@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV /home/marina/Trabajo-Final-TIC/vm_vs_docker_benchmark/venv
+set -gx VIRTUAL_ENV /home/marina/Trabajo-Final-TIC-BACKUP/vm_vs_docker_benchmark/venv
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"bin $PATH
